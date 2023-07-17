@@ -1,0 +1,15 @@
+{
+	"validData": {
+		"name": "Anukriti Jain",
+		"phone": "0123456789",
+		"email": "j.anukriti210@gmail.com"
+	},
+	"newValidData": {
+		"name": "New Name",
+		"phone": "9999999999",
+		"email": "new_name@gmail.com"
+	},
+	"invalidNames": [" ", "123", "*&^%$#", "Anu123456", "123ANukriti", "        " ],
+	"invalidPhones": [" ", 1203, "*&^%$#", "dggdowaihdo.", "123rdbdv", "-0000000000"],
+	"invalidEmails": [" ", "123434", "@@@@@", "*.com", "@.com", "   @   " ]
+}

@@ -1,0 +1,9 @@
+{
+  "author": {
+    "name": "Anukriti Jain",
+    "email": "j.anukriti210@gmail.com"
+  },
+  "devDependencies": {
+    "cypress": "^12.16.0"
+  }
+}
