@@ -74,7 +74,7 @@ describe('Test Contact App', () => {
                 contactAppPage.addContact(data.name, data.phone, data.email)
                 rows_added++
             });
-            //Verify if no new row is added
+            //Verify all records are added
             contactAppPage.getTableRowElement().should('have.length', rows_added)
 
         })
@@ -121,14 +121,10 @@ describe('Test Contact App', () => {
             });
             //Verify if no new row is added
             contactAppPage.getTableRowElement().should('have.length', 1)
-
-            //Delete added test record for cleanup
-            contactAppPage.cleanUpTestContacts()
         })
 
         //Test8
         it('Test if unable to add just by clicking Add button', () => {
-
             //Directly clicking on Add button, shouldn't add empty fields as contact record
             contactAppPage.clickAddButton()
             //Verify if no new row is added
