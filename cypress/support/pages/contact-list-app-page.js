@@ -21,19 +21,19 @@ export class ContactAppPage {
     editName(index, newName) {
         this.clickEditButton(index)
         this.getNameByIndex(index).get(this.input_field).eq(0).clear().type(newName)
-        this.clickUpdateButton(index)
+        this.clickUpdateButton()
     }
 
     editPhone(index, newPhone) {
         this.clickEditButton(index)
         this.getPhoneByIndex(index).get(this.input_field).eq(1).clear().type(newPhone)
-        this.clickUpdateButton(index)
+        this.clickUpdateButton()
     }
 
     editEmail(index, newEmail) {
         this.clickEditButton(index)
         this.getEmailByIndex(index).get(this.input_field).eq(2).clear().type(newEmail)
-        this.clickUpdateButton(index)
+        this.clickUpdateButton()
     }
 
     editAll(index, newName, newPhone, newEmail) {
@@ -41,7 +41,7 @@ export class ContactAppPage {
         this.getNameByIndex(index).get(this.input_field).eq(0).clear().type(newName)
         this.getPhoneByIndex(index).get(this.input_field).eq(1).clear().type(newPhone)
         this.getEmailByIndex(index).get(this.input_field).eq(2).clear().type(newEmail)
-        this.clickUpdateButton(index)
+        this.clickUpdateButton()
     }
 
     deleteContact(index) {
@@ -74,8 +74,8 @@ export class ContactAppPage {
         cy.get(this.edit_button).eq(index-1).click()
     }
 
-    clickUpdateButton(index) {
-        cy.get(this.update_button).eq(index-1).click()
+    clickUpdateButton() {
+        cy.get(this.update_button).first().click()
     }
 
     clickDeleteButton(index) {
@@ -94,15 +94,15 @@ export class ContactAppPage {
     }
 
     getNameByIndex(index) {
-        return cy.get(this.table_rows_tr).eq(index).get(this.td_element).eq(0)
+        return cy.get(this.table_rows_tr).eq(index).children().eq(0)
     }
 
     getPhoneByIndex(index) {
-        return cy.get(this.table_rows_tr).eq(index).get(this.td_element).eq(1)
+        return cy.get(this.table_rows_tr).eq(index).children().eq(1)
     }
 
     getEmailByIndex(index) {
-        return cy.get(this.table_rows_tr).eq(index).get(this.td_element).eq(2)
+        return cy.get(this.table_rows_tr).eq(index).children().eq(2)
     }
 
 }

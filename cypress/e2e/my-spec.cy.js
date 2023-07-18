@@ -35,9 +35,9 @@ describe('Test Contact App', () => {
         //Test2
         it('Test if a valid contact is added successfully', () => {
             //Adding valid test data from fixture file
-            const name = testContactData.validData.name
-            const phone = testContactData.validData.phone
-            const email = testContactData.validData.email
+            const name = testContactData.validData[0].name
+            const phone = testContactData.validData[0].phone
+            const email = testContactData.validData[0].email
 
             contactAppPage.addContact(name, phone, email)
 
@@ -54,9 +54,9 @@ describe('Test Contact App', () => {
         //Test3
         //Assuming adding exact duplicate contact where all fields are same, is not allowed
         it('Test if unable to add exact duplicate contact', () => {
-            const name = testContactData.validData.name
-            const phone = testContactData.validData.phone
-            const email = testContactData.validData.email
+            const name = testContactData.validData[0].name
+            const phone = testContactData.validData[0].phone
+            const email = testContactData.validData[0].email
 
             //Adding 2 contacts with same fields
             contactAppPage.addContact(name, phone, email)
@@ -67,11 +67,24 @@ describe('Test Contact App', () => {
         })
 
         //Test4
+        it('Test if able to add multiple valid customers', () => {
+            var rows_added = 1
+
+            testContactData.validData.forEach((data) => {
+                contactAppPage.addContact(data.name, data.phone, data.email)
+                rows_added++
+            });
+            //Verify if no new row is added
+            contactAppPage.getTableRowElement().should('have.length', rows_added)
+
+        })
+
+        //Test5
         //Assuming invalid name should NOT be added, FAILS if any contact record is added
         it('Test if unable to add invalid name', () => {
             //Adding inavlid names from fixture file
-            const phone = testContactData.validData.phone
-            const email = testContactData.validData.email
+            const phone = testContactData.validData[0].phone
+            const email = testContactData.validData[0].email
 
             testContactData.invalidNames.forEach((invalidName) => {
                 contactAppPage.addContact(invalidName, phone, email)
@@ -81,12 +94,12 @@ describe('Test Contact App', () => {
 
         })
 
-        //Test5
+        //Test6
         //Assuming invalid phone number should NOT be added, FAILS if any contact record is added
         it('Test if unable to add invalid phone number', () => {
             //Adding invalid phone numbers from fixture file
-            const name = testContactData.validData.name
-            const email = testContactData.validData.email
+            const name = testContactData.validData[0].name
+            const email = testContactData.validData[0].email
 
             testContactData.invalidPhones.forEach((invalidPhone) => {
                 contactAppPage.addContact(name, invalidPhone, email)
@@ -96,12 +109,12 @@ describe('Test Contact App', () => {
 
         })
 
-        //Test6
+        //Test7
         //Assuming invalid email ID should NOT be added, FAILS if any contact record is added
         it('Test if unable to add invalid emailID', () => {
             //Adding invalid email IDs from fixture file
-            const name = testContactData.validData.name
-            const phone = testContactData.validData.phone
+            const name = testContactData.validData[0].name
+            const phone = testContactData.validData[0].phone
 
             testContactData.invalidEmails.forEach((invalidEmail) => {
                 contactAppPage.addContact(name, phone, invalidEmail)
@@ -113,7 +126,7 @@ describe('Test Contact App', () => {
             contactAppPage.cleanUpTestContacts()
         })
 
-        //Test7
+        //Test8
         it('Test if unable to add just by clicking Add button', () => {
 
             //Directly clicking on Add button, shouldn't add empty fields as contact record
@@ -122,11 +135,11 @@ describe('Test Contact App', () => {
             contactAppPage.getTableRowElement().should('have.length', 1)
         })
 
-        //Test8
+        //Test9
         it('Test if all textfields after adding remain empty', () => {
-            const name = testContactData.validData.name
-            const phone = testContactData.validData.phone
-            const email = testContactData.validData.email
+            const name = testContactData.validData[0].name
+            const phone = testContactData.validData[0].phone
+            const email = testContactData.validData[0].email
 
             contactAppPage.addContact(name, phone, email)
 
@@ -145,11 +158,11 @@ describe('Test Contact App', () => {
             contactAppPage.cleanUpTestContacts()
         })
 
-        //Test9
+        //Test10
         it('Test if contact name is updated successfully, with other fields remaining unchanged', () => {
-            const name = testContactData.validData.name
-            const phone = testContactData.validData.phone
-            const email = testContactData.validData.email
+            const name = testContactData.validData[0].name
+            const phone = testContactData.validData[0].phone
+            const email = testContactData.validData[0].email
 
             const newName = testContactData.newValidData.name
 
@@ -164,11 +177,11 @@ describe('Test Contact App', () => {
             contactAppPage.getEmailByIndex(1).should('contain', email)
         })
 
-       //Test10
+       //Test11
         it('Test if contact phone number is updated successfully, with other fields remaining unchanged', () => {
-            const name = testContactData.validData.name
-            const phone = testContactData.validData.phone
-            const email = testContactData.validData.email
+            const name = testContactData.validData[0].name
+            const phone = testContactData.validData[0].phone
+            const email = testContactData.validData[0].email
 
             const newPhone = testContactData.newValidData.phone
 
@@ -183,11 +196,11 @@ describe('Test Contact App', () => {
             contactAppPage.getEmailByIndex(1).should('contain', email)
         })
 
-        //Test11
+        //Test12
         it('Test if contact email ID is updated successfully, with other fields remaining unchanged', () => {
-            const name = testContactData.validData.name
-            const phone = testContactData.validData.phone
-            const email = testContactData.validData.email
+            const name = testContactData.validData[0].name
+            const phone = testContactData.validData[0].phone
+            const email = testContactData.validData[0].email
 
             const newEmail = testContactData.newValidData.email
 
@@ -202,11 +215,11 @@ describe('Test Contact App', () => {
             contactAppPage.getPhoneByIndex(1).should('contain', phone)
         })
 
-        //Test12
+        //Test13
         it('Test if contacts all fields are updated successfully', () => {
-            const name = testContactData.validData.name
-            const phone = testContactData.validData.phone
-            const email = testContactData.validData.email
+            const name = testContactData.validData[0].name
+            const phone = testContactData.validData[0].phone
+            const email = testContactData.validData[0].email
 
             const newName = testContactData.newValidData.name
             const newPhone = testContactData.newValidData.phone
@@ -222,21 +235,77 @@ describe('Test Contact App', () => {
             contactAppPage.getPhoneByIndex(1).should('contain', newPhone)
             contactAppPage.getEmailByIndex(1).should('contain', newEmail)
         })
+
+        //Test14
+        it('Test if able to edit the email of last record out of the multiple records', () => {
+            var rows_added = 0
+
+            const newEmail = testContactData.newValidData.email
+
+            testContactData.validData.forEach((data) => {
+                contactAppPage.addContact(data.name, data.phone, data.email)
+                rows_added++
+            });
+
+            //editing only email ID of the last record added
+            contactAppPage.editEmail(rows_added, newEmail)
+
+            //Verify the content of the fields
+            contactAppPage.getNameByIndex(rows_added).should('contain', testContactData.validData[rows_added-1].name)
+            contactAppPage.getPhoneByIndex(rows_added).should('contain', testContactData.validData[rows_added - 1].phone)
+            contactAppPage.getEmailByIndex(rows_added).should('contain', newEmail)
+        })
     })
 
     describe('Test Delete functionality', () => {
 
-        //Test13
+        //Test15
         it('Test if contact is deleted successfully', () => {
-            const name = testContactData.validData.name
-            const phone = testContactData.validData.phone
-            const email = testContactData.validData.email
+            const name = testContactData.validData[0].name
+            const phone = testContactData.validData[0].phone
+            const email = testContactData.validData[0].email
             contactAppPage.addContact(name, phone, email)
 
             //Delete added contact
-            contactAppPage.deleteContact(1, name, phone, email)
+            contactAppPage.deleteContact(1)
 
-            //Verify if no record is there
+            //Verify if the record is not there
+            contactAppPage.getTableRowElement().should('not.have.text', phone)
+            contactAppPage.getTableRowElement().should('have.length', 1)
+        })
+
+        //Test16
+        it('Test if second contact is deleted out of the multiple records', () => {
+            var rows_added = 1
+
+            testContactData.validData.forEach((data) => {
+                contactAppPage.addContact(data.name, data.phone, data.email)
+                rows_added++
+            });
+
+            //Delete second added contact
+            contactAppPage.deleteContact(2)
+
+            //Verify if the second record is deleted
+            contactAppPage.getTableRowElement().should('not.have.text', testContactData.validData[1].phone)
+            contactAppPage.getTableRowElement().should('have.length', rows_added - 1)
+        })
+
+        //Test17
+        it('Test if multiple contacts are deleted', () => {
+            var rows_added = 1
+
+            testContactData.validData.forEach((data) => {
+                contactAppPage.addContact(data.name, data.phone, data.email)
+                rows_added++
+            });
+
+            //Delete all contacts one by one
+            for (var i = 1; i < rows_added; i++) {
+                contactAppPage.deleteContact(1)
+            }
+
+            //Verify if no row is left
             contactAppPage.getTableRowElement().should('have.length', 1)
         })
     })

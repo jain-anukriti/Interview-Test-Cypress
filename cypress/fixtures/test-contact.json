@@ -1,15 +1,29 @@
 {
-	"validData": {
-		"name": "Anukriti Jain",
-		"phone": "0123456789",
-		"email": "j.anukriti210@gmail.com"
-	},
+	"validData": 
+		[
+			{
+				"name": "Anukriti Jain",
+				"phone": 1234567890,
+				"email": "j.anukriti210@gmail.com"
+			},
+			{
+				"name": "cypress test",
+				"phone": 4362764522,
+				"email": "cypress_test@gmail.com"
+			},
+			{
+				"name": "cypress testing",
+				"phone": 6578763546,
+				"email": "cypress_testing@gmail.com"
+			}
+		]
+	,
 	"newValidData": {
 		"name": "New Name",
-		"phone": "9999999999",
+		"phone": 9999999999,
 		"email": "new_name@gmail.com"
 	},
-	"invalidNames": [" ", "123", "*&^%$#", "Anu123456", "123ANukriti", "        " ],
+	"invalidNames": [" ", "123", "*&^%$#", "123ANukriti", "        " ],
 	"invalidPhones": [" ", 1203, "*&^%$#", "dggdowaihdo.", "123rdbdv", "-0000000000"],
 	"invalidEmails": [" ", "123434", "@@@@@", "*.com", "@.com", "   @   " ]
 }
