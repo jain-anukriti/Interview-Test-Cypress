@@ -29,60 +29,78 @@ Result: PASS
 Result: FAIL, Duplicate records were added.
 
 
-**Test4: Tests if unable to add invalid name** (assuming invalid name should NOT be added, FAILS if any contact record is added)
+**Test4: Tests if able to add multiple valid contacts** 
+
+Result: PASS
+
+
+**Test5: Tests if unable to add invalid name** (assuming invalid name should NOT be added, FAILS if any contact record is added)
 
 Result: FAIL, Able to add multiple records with different invalid names.
 
 
-**Test5: Tests if unable to add invalid phone number** (Assuming invalid phone number should NOT be added, FAILS if any contact record is added)
+**Test6: Tests if unable to add invalid phone number** (Assuming invalid phone number should NOT be added, FAILS if any contact record is added)
 
 Result: FAIL, Able to add multiple records with different invalid phone numbers.
 
 
-**Test6: Tests if unable to add invalid emailID** (Assuming invalid email ID should NOT be added, FAILS if any contact record is added)
+**Test7: Tests if unable to add invalid emailID** (Assuming invalid email ID should NOT be added, FAILS if any contact record is added)
 
 Result: FAIL, Able to add multiple records with different invalid email IDs.
 
 
-**Test7: Tests if unable to add just by clicking Add button** (Directly clicking on Add button, shouldn't add empty fields as contact record)
+**Test8: Tests if unable to add just by clicking Add button** (Directly clicking on Add button, shouldn't add empty fields as contact record)
 
 Result: FAIL, Able to add empty record without entering any value in any field, not expected
 
 
-**Test8: Tests if all textfields after adding remain empty**
+**Test9: Tests if all textfields after adding remain empty**
 
 Result: PASS
 
 
-**Test9: Tests if contact name is updated successfully, with other fields remaining unchanged**
+**Test10: Tests if contact name is updated successfully, with other fields remaining unchanged**
 
 Result: FAIL, After updating name the other fields are becoming blank and getting saved.
 
 
-**Test10: Tests if contact phone number is updated successfully, with other fields remaining unchanged**
+**Test11: Tests if contact phone number is updated successfully, with other fields remaining unchanged**
 
 Result: PASS
 
 
-**Test11: Tests if contact email ID is updated successfully, with other fields remaining unchanged**
+**Test12: Tests if contact email ID is updated successfully, with other fields remaining unchanged**
 
 Result: PASS
 
 
-**Test12: Tests if contacts all fields are updated successfully**
+**Test13: Tests if contacts all fields are updated successfully**
 
 Result: FAIL, only name is updated correctly, other field became blank.
 
 
-**Test13: Tests if contact is deleted successfully**
+**Test14: Tests if able to edit the email of last record out of the multiple records**
 
 Result: PASS
 
 
+**Test15: Tests if contact is deleted successfully**
+
+Result: PASS
+
+
+**Test16: Tests if second contact is deleted out of the multiple records**
+
+Result: PASS
+
+
+**Test15: Test if multiple contacts are deleted**
+
+Result: PASS
+
 
 Below is the snippet of the test results:
-
-![Tests_Cypress](https://github.com/jain-anukriti/Interview-Test-Cypress/assets/139177735/458050ea-9fba-4ff4-a411-b3e4e178b95d)
+![Tests_Cypress](https://github.com/jain-anukriti/Interview-Test-Cypress/assets/139177735/f2fd3323-df44-4bfa-ae5a-83ac9a72d9d0)
 
 
 
