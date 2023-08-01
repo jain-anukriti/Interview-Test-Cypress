@@ -6,7 +6,7 @@ The test data is present at fixture/test-contact.json file.
 
 There is a cleanup after every test that result in creation of contact record.
 
-my-spec.cy.js consists of 13 test cases.
+my-spec.cy.js consists of 17 test cases.
 
 The test cases are divided into 3 sections as per functionality(Add, Edit, Delete) using describe block.
 
@@ -94,7 +94,7 @@ Result: PASS
 Result: PASS
 
 
-**Test15: Test if multiple contacts are deleted**
+**Test17: Test if multiple contacts are deleted**
 
 Result: PASS
 
